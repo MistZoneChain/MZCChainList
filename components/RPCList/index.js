@@ -85,10 +85,10 @@ export default function RPCList({ chain }) {
         <caption>{`${chain.name} RPC URL List`}</caption>
         <thead>
           <tr>
-            <th>RPC Server Address</th>
-            <th>Height</th>
-            <th>Latency</th>
-            <th>Score</th>
+            <th>RPC URL</th>
+            <th>最新区块高度</th>
+            <th>网络延迟</th>
+            <th>状态</th>
             <th></th>
           </tr>
         </thead>

@@ -80,7 +80,7 @@ export const renderProviderText = (account) => {
     };
     return providerTextList[getProvider()];
   } else {
-    return 'Connect wallet';
+    return '连接网络';
   }
 };
 

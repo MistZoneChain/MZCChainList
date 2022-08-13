@@ -100,10 +100,10 @@ function Home({ changeTheme, theme, sortedChains }) {
                 <span className={classes.helpingUnderline}>MistZone Chain List</span>
               </Typography>
               <Typography variant="h2" className={classes.helpingParagraph}>
-                连接至迷踪链(MZC)网络
+                轻松连接至迷踪链(MZC)网络
               </Typography>
               <Typography className={classes.subTitle}>
-                MistZone Chain List 是 MZC 网络的信息列表。 用户可以使用这些信息将他们的账户以正确的方式连接至迷踪链。
+                MistZone Chain List 是 MZC 网络的信息列表。<br />旨在帮助用户以正确的方式连接至迷踪链(MZC)网络。
               </Typography>
               <Button
                 size="large"
@@ -166,8 +166,6 @@ function Home({ changeTheme, theme, sortedChains }) {
               })}
             </div>
           </div>
-        </div>
-        <div className={theme.palette.type === 'dark' ? `${classes.power} ${classes.darkPower}` : `${classes.power} ${classes.lightPower}`}>
         </div>
       </main>
     </div>
