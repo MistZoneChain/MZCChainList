@@ -92,7 +92,7 @@ const coreTheme = {
   },
   palette: {
     primary: {
-      main: 'rgba(0, 0, 0, 0.87)',
+      main: '#fff',
     },
     secondary: {
       main: '#EFEFEF',
@@ -148,7 +148,7 @@ const coreTheme = {
       outlinedPrimary: {
         border: '1px solid #EAEAEA',
         "&:hover": {
-          backgroundColor: colors.blue+' !important',
+          backgroundColor: colors.blue + ' !important',
           color: '#fff'
         }
       }
@@ -164,7 +164,7 @@ const coreTheme = {
         padding: '9px 6px'
       }
     },
-    MuiSnackbar : {
+    MuiSnackbar: {
       root: {
         maxWidth: 'calc(100vw - 24px)'
       },

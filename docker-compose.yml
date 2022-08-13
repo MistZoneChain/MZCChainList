@@ -1,0 +1,10 @@
+version: "4"
+services:
+  chainlist:
+    build: .
+    restart: always
+    container_name: mzc-chainlist
+    ports:
+      - "3000:3000"
+    environment:
+      - TZ=Asia/Shanghai

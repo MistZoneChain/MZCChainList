@@ -107,13 +107,13 @@ class Unlock extends Component {
 
   connectionConnected = () => {
 
-    if(this.props.closeModal != null) {
+    if (this.props.closeModal != null) {
       this.props.closeModal()
     }
   }
 
   connectionDisconnected = () => {
-    if(this.props.closeModal != null) {
+    if (this.props.closeModal != null) {
       this.props.closeModal()
     }
   }
@@ -122,11 +122,11 @@ class Unlock extends Component {
     const { classes, closeModal } = this.props;
 
     return (
-      <div className={ classes.root }>
-        <div className={ classes.closeIcon } onClick={ closeModal }><CloseIcon /></div>
-        <div className={ classes.contentContainer }>
+      <div className={classes.root}>
+        <div className={classes.closeIcon} onClick={closeModal}><CloseIcon /></div>
+        <div className={classes.contentContainer}>
           <Web3ReactProvider getLibrary={getLibrary}>
-            <MyComponent closeModal={ closeModal} />
+            <MyComponent closeModal={closeModal} />
           </Web3ReactProvider>
         </div>
       </div>
@@ -148,13 +148,13 @@ function onConnectionClicked(currentConnector, name, setActivatingConnector, act
 }
 
 function onDeactivateClicked(deactivate, connector) {
-  if(deactivate) {
+  if (deactivate) {
     deactivate()
   }
-  if(connector && connector.close) {
+  if (connector && connector.close) {
     connector.close()
   }
-  stores.accountStore.setStore({ account: { }, web3context: null })
+  stores.accountStore.setStore({ account: {}, web3context: null })
   stores.emitter.emit(CONNECTION_DISCONNECTED)
 }
 
@@ -199,64 +199,64 @@ function MyComponent(props) {
       {Object.keys(connectorsByName).map(name => {
         const currentConnector = connectorsByName[name];
         const activating = currentConnector === activatingConnector;
-        const connected = (currentConnector === connector||currentConnector === localConnector);
+        const connected = (currentConnector === connector || currentConnector === localConnector);
         const disabled =
-           !!activatingConnector || !!error;
+          !!activatingConnector || !!error;
 
         let url;
         let display = name;
         let descriptor = ''
         if (name === 'MetaMask') {
           url = `${assetPrefix}/connectors/icn-metamask.svg`;
-          descriptor= 'Connect to your MetaMask wallet'
+          descriptor = '使用MetaMask连接'
         } else if (name === 'WalletConnect') {
           url = `${assetPrefix}/connectors/walletConnectIcon.svg`
-          descriptor= 'Scan with WalletConnect to connect'
+          descriptor = '使用WalletConnect连接'
         } else if (name === 'TrustWallet') {
           url = `${assetPrefix}/connectors/trustWallet.png`
-          descriptor= 'Connect to your TrustWallet'
+          descriptor = '使用TrustWallet连接'
         } else if (name === 'Portis') {
           url = `${assetPrefix}/connectors/portisIcon.png`
-          descriptor= 'Connect with your Portis account'
+          descriptor = '使用Portis连接'
         } else if (name === 'Fortmatic') {
           url = `${assetPrefix}/connectors/fortmaticIcon.png`
-          descriptor= 'Connect with your Fortmatic account'
+          descriptor = '使用Fortmatic连接'
         } else if (name === 'Ledger') {
           url = `${assetPrefix}/connectors/icn-ledger.svg`
-          descriptor= 'Connect with your Ledger Device'
+          descriptor = '使用Ledger连接'
         } else if (name === 'Squarelink') {
           url = `${assetPrefix}/connectors/squarelink.png`
-          descriptor= 'Connect with your Squarelink account'
+          descriptor = '使用Squarelink连接'
         } else if (name === 'Trezor') {
           url = `${assetPrefix}/connectors/trezor.png`
-          descriptor= 'Connect with your Trezor Device'
+          descriptor = '使用Trezor连接'
         } else if (name === 'Torus') {
           url = `${assetPrefix}/connectors/torus.jpg`
-          descriptor= 'Connect with your Torus account'
+          descriptor = '使用Torus连接'
         } else if (name === 'Authereum') {
           url = `${assetPrefix}/connectors/icn-aethereum.svg`
-          descriptor= 'Connect with your Authereum account'
+          descriptor = '使用Authereum连接'
         } else if (name === 'WalletLink') {
           display = 'Coinbase Wallet'
           url = `${assetPrefix}/connectors/coinbaseWalletIcon.svg`
-          descriptor= 'Connect to your Coinbase wallet'
+          descriptor = '使用WalletLink连接'
         } else if (name === 'Frame') {
           return ''
         }
 
         return (
           <div key={name} style={{ padding: '0px', display: 'flex', margin: (width > 576 ? '12px 0px' : '0px') }}>
-            <Button style={ {
-                width: ( width > 576 ? '350px' : 'calc(100vw - 100px)'),
-                height: '160px'
-              } }
+            <Button style={{
+              width: (width > 576 ? '350px' : 'calc(100vw - 100px)'),
+              height: '160px'
+            }}
               variant='contained'
               onClick={() => {
                 onConnectionClicked(currentConnector, name, setActivatingConnector, activate)
               }}
               disableElevation
               color='secondary'
-              disabled={ disabled }>
+              disabled={disabled}>
               <div style={{
                 height: '130px',
                 width: '100%',
@@ -266,22 +266,22 @@ function MyComponent(props) {
                 justifyContent: 'space-evenly'
               }}>
                 <img style={{
-                    width: '40px',
-                    height: '40px'
-                  }} src={url} alt=""/>
-                <Typography variant={ 'h2'}>
-                  { display }
+                  width: '40px',
+                  height: '40px'
+                }} src={url} alt="" />
+                <Typography variant={'h2'}>
+                  {display}
                 </Typography>
-                <Typography variant={ 'body2'}>
-                  { descriptor }
+                <Typography variant={'body2'}>
+                  {descriptor}
                 </Typography>
-                { activating && <CircularProgress size={ 15 } style={{marginRight: '10px'}} /> }
-                { (!activating && connected) && <div style={{ background: '#4caf50', borderRadius: '10px', width: '10px', height: '10px', marginRight: '10px' }}></div> }
+                {activating && <CircularProgress size={15} style={{ marginRight: '10px' }} />}
+                {(!activating && connected) && <div style={{ background: '#4caf50', borderRadius: '10px', width: '10px', height: '10px', marginRight: '10px' }}></div>}
               </div>
             </Button>
           </div>
         )
-      }) }
+      })}
     </div>
   )
 

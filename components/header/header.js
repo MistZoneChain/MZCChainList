@@ -71,7 +71,7 @@ const searchTheme = createTheme({
   palette: {
     type: 'light',
     primary: {
-      main: '#f0b90b',
+      main: '#8f8f8f',
     },
   },
   shape: {
@@ -122,7 +122,7 @@ const searchTheme = createTheme({
 const TestnetSwitch = withStyles({
   switchBase: {
     '&$checked': {
-      color: '#f0b90b',
+      color: '#8f8f8f',
     },
   },
   checked: {},
@@ -194,7 +194,7 @@ function Header(props) {
   }, [debouncedSearchTerm]);
 
   const router = useRouter();
-  useEffect(()=>{
+  useEffect(() => {
     if (!router.isReady) return;
     if (router.query.search) {
       setSearchTerm(router.query.search);
@@ -222,7 +222,7 @@ function Header(props) {
                 ),
                 startAdornment: (
                   <InputAdornment position="start">
-                    <Typography className={classes.searchInputAdnornment}>Search Networks</Typography>
+                    <Typography className={classes.searchInputAdnornment}>搜索网络</Typography>
                   </InputAdornment>
                 ),
               }}
@@ -234,7 +234,7 @@ function Header(props) {
       <div className={classes.switchContainer}>
         <label className={classes.label}>
           <TestnetSwitch checked={testnets} onChange={toggleTestnets} />
-          <span>Testnets</span>
+          <span>展示测试网</span>
         </label>
         <div className={classes.themeSelectContainer}>
           <StyledSwitch
@@ -257,7 +257,7 @@ function Header(props) {
           <div className={`${classes.accountIcon} ${classes[renderProviderLogo()]}`}></div>
         )}
         <Typography variant="h5">
-          {account && account.address ? formatAddress(account.address) : 'Connect Wallet'}
+          {account && account.address ? formatAddress(account.address) : '连接账户'}
         </Typography>
       </Button>
     </div>

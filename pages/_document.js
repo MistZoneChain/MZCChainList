@@ -7,21 +7,10 @@ import { assetPrefix } from '../base/env';
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="zh">
         <Head>
           <link rel="stylesheet" href={`${assetPrefix}/fonts/Inter/Inter.css`} />
           <link rel="stylesheet" href={`${assetPrefix}/fonts/Druk/Druk.css`} />
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=G-HJLF1RHLH2`}></script>
-          <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-HJLF1RHLH2', { page_path: window.location.pathname });
-            `,
-          }}
-        />
         </Head>
         <body>
           <Main />

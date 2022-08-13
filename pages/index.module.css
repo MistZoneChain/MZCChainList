@@ -58,7 +58,7 @@
 }
 
 .helpingUnderline {
-  color: #f0b90b;
+  color: #8f8f8f;
 }
 
 .helpingParagraph {
@@ -128,8 +128,8 @@
 }
 
 .darkPower {
-  background-color: #2B2E3C;
-  color: rgba(255, 255, 255, 0.7)
+  background-color: #2b2e3c;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 @media screen and (max-width: 1700px) {
@@ -243,4 +243,3 @@
     padding: 20px;
   }
 }
-

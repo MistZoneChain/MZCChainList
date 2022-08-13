@@ -37,7 +37,7 @@ export default function Chain({ chain }) {
   }, []);
 
   const icon = useMemo(() => {
-    return chain.chainSlug ? `${assetPrefix}/images/rsz_${chain.chainSlug}.svg` : `${assetPrefix}/unknown-logo.png`;
+    return chain.chainSlug ? `${assetPrefix}/images/rsz_${chain.chainSlug}.png` : `${assetPrefix}/unknown-logo.png`;
   }, [chain]);
 
   const chainId = useChain((state) => state.id);
@@ -79,13 +79,13 @@ export default function Chain({ chain }) {
         <div className={classes.chainInfoContainer}>
           <div className={classes.dataPoint}>
             <Typography variant="subtitle1" color="textSecondary" className={classes.dataPointHeader}>
-              ChainID
+              链ID
             </Typography>
             <Typography variant="h5">{chain.chainId}</Typography>
           </div>
           <div className={classes.dataPoint}>
             <Typography variant="subtitle1" color="textSecondary" className={classes.dataPointHeader}>
-              Currency
+              通行证
             </Typography>
             <Typography variant="h5">{chain.nativeCurrency ? chain.nativeCurrency.symbol : 'none'}</Typography>
           </div>

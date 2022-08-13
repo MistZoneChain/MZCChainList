@@ -11,7 +11,7 @@ export default function RPCList({ chain }) {
   const specialChain = [];
   const normalChain = [];
   chains.forEach(item => {
-    if (item.data && item.data.url.includes('nodereal.io')) {
+    if (item.data && item.data.url.includes('seaeye.cn')) {
       specialChain.push(item);
     } else {
       normalChain.push(item);
@@ -170,7 +170,7 @@ const Row = ({ values, chain, isEthMainnet }) => {
 const CopyUrl = ({ url = '' }) => {
   return (
     <Button style={{ padding: '0 8px' }} onClick={() => navigator.clipboard.writeText(url)}>
-      Copy URL
+      复制URL
     </Button>
   );
 };
